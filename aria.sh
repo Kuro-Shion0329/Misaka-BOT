@@ -1,5 +1,5 @@
 file="trackers.txt"
-echo "$(curl -Ns https://trackerslist.com/best_aria2.txt | awk '$1' | tr ',' '\n')" > trackers.txt
+echo "$(curl -Ns https://trackerslist.com/all.txt | awk '$1' | tr ',' '\n')" > trackers.txt
 echo "$(curl -Ns https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt)" >> trackers.txt
 tmp=$(sort trackers.txt | uniq) && echo "$tmp" > trackers.txt
 sed -i '/^$/d' trackers.txt
